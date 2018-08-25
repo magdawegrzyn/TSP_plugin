@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=TSP - optimal route
+qgisMinimumVersion=2.14
+description=Find the optimal route!
+version=0.2
+author=Magdalena Węgrzyn
+email=magdalenawegrzyn9@gmail.com
+
+about=The plugin determines the fastest or shortest route between the set of points (Travelling Salesman Problem).The plugin uses Google Maps API or OpenRouteService API to obtain distances and geometry of routes. The first point, is indicated as the starting and final point of the trip. The input data is a point layer, the result is a line layer with the indicated route. Attributes of this layer are the length of the route and the duration of the trip, as well as the order of the places visited in a descriptive form. User can provide his own Google Maps API or OpenRouteService API keys.
+
+tracker=https://github.com/magdawegrzyn/TSP_plugin/issues
+repository=https://github.com/magdawegrzyn/TSP_plugin
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=TSP, travelling salesman problem, optimal route, optimization, fastest route, shortest route
+
+homepage=https://github.com/magdawegrzyn/TSP_plugin
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
