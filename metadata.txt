@@ -10,7 +10,7 @@
 name=TSP - optimal route
 qgisMinimumVersion=2.0
 description=Find the optimal route!
-version=0.1
+version=0.3
 author=Magdalena Węgrzyn
 email=magdalenawegrzyn9@gmail.com
 
