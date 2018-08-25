@@ -21,7 +21,18 @@
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
+import sys, os
+plugin_dir = os.path.dirname(__file__)
+site_packages_dir = os.path.join(plugin_dir, 'site-packages')
 
+
+# Checking the presence of ortools library
+try:
+    from ortools.constraint_solver import pywrapcp
+    from ortools.constraint_solver import routing_enums_pb2
+except:
+    if site_packages_dir not in sys.path:
+        sys.path.append(site_packages_dir)
 
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name

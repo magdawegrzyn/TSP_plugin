@@ -28,7 +28,7 @@ from qgis.core import QgsCoordinateReferenceSystem, QgsCoordinateTransform
 import resources
 # Import the code for the dialog
 from komiwojazer_qgis_dialog import KomiwojazerDialog
-import os.path, utils
+import os.path, tsp_utils
 import tsp_script, tcp_api, tcp_api_google
 from qgis.core import *
 
@@ -219,7 +219,7 @@ class Komiwojazer:
             mbx.setStandardButtons(QMessageBox.Ok)
 
             #checking internet connection
-            if not utils.isInternetConnected():
+            if not tsp_utils.isInternetConnected():
                 mbx.setText(
                     "Check your internet connection first")
                 mbx.show()

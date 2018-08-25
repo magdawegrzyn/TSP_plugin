@@ -8,9 +8,9 @@
 
 [general]
 name=TSP - optimal route
-qgisMinimumVersion=2.14
+qgisMinimumVersion=2.0
 description=Find the optimal route!
-version=0.2
+version=0.1
 author=Magdalena Węgrzyn
 email=magdalenawegrzyn9@gmail.com
 
@@ -32,7 +32,7 @@ homepage=https://github.com/magdawegrzyn/TSP_plugin
 category=Plugins
 icon=icon.png
 # experimental flag
-experimental=False
+experimental=True
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
