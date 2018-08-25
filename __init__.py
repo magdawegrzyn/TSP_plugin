@@ -21,19 +21,28 @@
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
+import urllib, zipfile
 import sys, os
+
 plugin_dir = os.path.dirname(__file__)
 site_packages_dir = os.path.join(plugin_dir, 'site-packages')
+zipfilePath = os.path.join(plugin_dir,'site-packages.zip')
 
-
-# Checking the presence of ortools library
+if site_packages_dir not in sys.path:
+    sys.path.append(site_packages_dir)
+	
 try:
     from ortools.constraint_solver import pywrapcp
     from ortools.constraint_solver import routing_enums_pb2
 except:
-    if site_packages_dir not in sys.path:
-        sys.path.append(site_packages_dir)
-
+    urllib.urlretrieve('http://files.envirosolutions.pl/site-packages.zip', zipfilePath)
+    zip_ref = zipfile.ZipFile(zipfilePath, 'r')
+    zip_ref.extractall(plugin_dir)
+    zip_ref.close()
+    os.remove(zipfilePath)
+		
+from ortools.constraint_solver import pywrapcp
+from ortools.constraint_solver import routing_enums_pb2
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name
     """Load Komiwojazer class from file Komiwojazer.
